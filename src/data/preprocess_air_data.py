@@ -141,7 +141,7 @@ import pandas as pd
 from lxml import etree as ET
 
 def preprocess_air_data(station_id=None):
-    # Create directory if it doesn't exist
+
     os.makedirs("data/preprocessed/air", exist_ok=True)
     
     # Open XML file
@@ -159,7 +159,7 @@ def preprocess_air_data(station_id=None):
     # Get all available station IDs if none specified
     all_station_ids = set(tree.xpath('//postaja/@sifra'))
     
-    # If no specific station ID is provided, process all stations
+
     station_ids_to_process = [station_id] if station_id else all_station_ids
     
     for sifra in station_ids_to_process:
@@ -176,54 +176,50 @@ def process_station(tree, sifra):
         return
     
     # Get all possible measurement types from the first station entry
-    # This dynamically captures all available measurements
     first_station = postaja_elements[0]
     measurement_types = [child.tag for child in first_station 
                          if child.tag not in ['merilno_mesto', 'datum_od', 'datum_do']]
     
-    # Initialize DataFrame columns
     columns = ["date_to"] + measurement_types
     df = pd.DataFrame(columns=columns)
     
-    # Check if csv file already exists
     output_path = f"data/preprocessed/air/{sifra}.csv"
     if os.path.exists(output_path):
         df = pd.read_csv(output_path)
     
-    # Convert the XML data to a DataFrame
+
     for postaja in postaja_elements:
-        # Extract date
+
         date_to = postaja.find('datum_do').text
         
-        # Extract all measurements
+
         row_data = [date_to]
         for measurement in measurement_types:
             element = postaja.find(measurement)
             value = element.text if element is not None else np.nan
             row_data.append(value)
         
-        # Append the data as a new row in the DataFrame
+
         new_row = pd.DataFrame([row_data], columns=columns)
         df = pd.concat([df, new_row], ignore_index=True)
     
-    # Filter unique "datum_do" values
+
     df = df.drop_duplicates(subset=["date_to"])
     
-    # Sort the DataFrame by the "date_to" column
+
     df = df.sort_values(by="date_to")
     
-    # Replace string values
+
     df = df.replace("", np.nan)
     df = df.replace("<1", 1)
     df = df.replace("<2", 2)
     
-    # Save the DataFrame to a CSV file
+
     df.to_csv(output_path, index=False)
     print(f"Saved data for station {sifra} to {output_path}")
 
 if __name__ == "__main__":
-    # You can call with a specific station ID or without any to process all stations
-    # Example: preprocess_air_data("E410")
+
     preprocess_air_data()
 
 
