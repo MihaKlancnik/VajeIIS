@@ -2,10 +2,15 @@ import requests
 from datetime import datetime
 import xml.etree.ElementTree as ET
 
+import yaml
+
 def fetch_air_data():
     try:
 
-        url = "https://www.arso.gov.si/xml/zrak/ones_zrak_urni_podatki_7dni.xml"
+        # Load configuration from YAML file
+        params = yaml.safe_load(open("params.yaml"))["fetch"]
+
+        url = params["url"]
 
         response = requests.get(url)
         response.raise_for_status()  
