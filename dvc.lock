@@ -15,8 +15,8 @@ stages:
     outs:
     - path: data/raw/air/air_data.xml
       hash: md5
-      md5: 97bbab321ed06e951d2f9fdabef0a8d9
-      size: 1150987
+      md5: 5ae5e1057272694fa10d4af13928b495
+      size: 1150369
   preprocess:
     cmd: "poetry run python src/data/preprocess_air_data.py\ngit commit -am \"Updated
       preprocessed air data on `date` with DVC pipeline and GitHub workflows\" ||
