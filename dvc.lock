@@ -36,11 +36,6 @@ stages:
     outs:
     - path: data/preprocessed/air
       hash: md5
-<<<<<<< HEAD
-      md5: 97f1d59d9e3f09b0cb18cfb674228482.dir
-      size: 315990
-=======
       md5: 23a9e368b9d7c003f6c3111886e24867.dir
       size: 327861
->>>>>>> 05003a8c5514d5d258b5b8901062591fd44ac088
       nfiles: 23
