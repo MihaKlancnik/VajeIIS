@@ -16,6 +16,7 @@ requests = "^2.32.3"
 pyaml = "^25.1.0"
 great-expectations = "0.18.21"
 notebook = "^7.4.2"
+evidently = "^0.7.5"
 
 
 [build-system]
