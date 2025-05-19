@@ -29,7 +29,7 @@ stages:
           persist: true
   test_data:
     cmd: |
-      poetry run python src/data/test_data.py || true
+      poetry run python src/data/test_data.py
     deps:
       - data/preprocessed/air/
       - src/data/test_data.py
