@@ -2,13 +2,13 @@
 name = "lab-vaje"
 version = "0.1.0"
 description = "IIR VAJE"
-authors = ["Your Name <you@example.com>"]
-license = "MIT"
+authors = ["Your Name <you@example.com>"] # Use the old format for authors
+license = "MIT" # Use the old format for license
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
-numpy = ">=1.2.4,<2.0.0"
+python = ">=3.10,<3.13" 
+numpy = "^1.24.4" 
 pandas = "^2.2.3"
 scikit-learn = "^1.6.1"
 lxml = "^5.3.1"
@@ -17,8 +17,8 @@ pyaml = "^25.1.0"
 great-expectations = "0.18.21"
 notebook = "^7.4.2"
 evidently = "^0.7.5"
-
+tensorflow = ">=2.19.0,<3.0.0" 
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"] # Simplified and compatible
 build-backend = "poetry.core.masonry.api"
