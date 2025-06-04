@@ -24,8 +24,8 @@ stages:
     deps:
     - path: data/raw/air/air_data.xml
       hash: md5
-      md5: 7f09f3ec47da4221ae9890f80c4c868a
-      size: 1149075
+      md5: 257123d238f1e8cf8e20c21dd651462f
+      size: 1149454
     - path: src/data/preprocess_air_data.py
       hash: md5
       md5: 5f63e44f23539127a621e7509c29eced
@@ -36,16 +36,16 @@ stages:
     outs:
     - path: data/preprocessed/air
       hash: md5
-      md5: 7097f3477289eb4aee9f613ffd6080bd.dir
-      size: 678074
+      md5: 9011860a92e5a10aaa2aa852a5e1a50d.dir
+      size: 703940
       nfiles: 23
   test_data:
     cmd: "poetry run python src/data/test_data.py\n"
     deps:
     - path: data/preprocessed/air/
       hash: md5
-      md5: 7097f3477289eb4aee9f613ffd6080bd.dir
-      size: 678074
+      md5: 9011860a92e5a10aaa2aa852a5e1a50d.dir
+      size: 703940
       nfiles: 23
     - path: src/data/test_data.py
       hash: md5
