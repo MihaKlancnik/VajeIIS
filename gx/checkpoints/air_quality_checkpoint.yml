@@ -18,7 +18,13 @@ action_list:
       class_name: UpdateDataDocsAction
 evaluation_parameters: {}
 runtime_configuration: {}
-validations: []
+validations:
+  - batch_request:
+      datasource_name: air_quality_v16
+      data_asset_name: air_quality_data_v16
+      options: {}
+      batch_slice:
+    expectation_suite_name: air_quality_suite
 profilers: []
 ge_cloud_id:
 expectation_suite_ge_cloud_id:

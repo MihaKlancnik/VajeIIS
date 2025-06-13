@@ -5,8 +5,8 @@
     {
       "expectation_type": "expect_table_row_count_to_be_between",
       "kwargs": {
-        "max_value": 643,
-        "min_value": 643
+        "max_value": 941,
+        "min_value": 941
       },
       "meta": {
         "profiler_details": {
@@ -23,9 +23,9 @@
       "expectation_type": "expect_table_columns_to_match_set",
       "kwargs": {
         "column_set": [
+          "PM2.5",
           "PM10",
-          "date_to",
-          "PM2.5"
+          "date_to"
         ],
         "exact_match": null
       },
@@ -147,7 +147,7 @@
       "kwargs": {
         "column": "date_to",
         "mostly": 1.0,
-        "regex": "(?:25[0-5]|2[0-4]\\d|[01]\\d{2}|\\d{1,2})(?:.(?:25[0-5]|2[0-4]\\d|[01]\\d{2}|\\d{1,2})){3}"
+        "regex": "[A-Za-z0-9\\.,;:!?()\\\"'%\\-]+"
       },
       "meta": {
         "profiler_details": {
@@ -173,7 +173,6 @@
         "column": "PM10",
         "mostly": 1.0,
         "value_set": [
-          2,
           3,
           4,
           5,
@@ -213,12 +212,19 @@
           39,
           40,
           41,
-          42,
-          43,
           44,
+          45,
+          47,
           48,
-          179,
-          59
+          50,
+          51,
+          53,
+          56,
+          58,
+          59,
+          60,
+          66,
+          67
         ]
       },
       "meta": {
@@ -239,8 +245,8 @@
       "expectation_type": "expect_column_unique_value_count_to_be_between",
       "kwargs": {
         "column": "PM10",
-        "max_value": 46,
-        "min_value": 46,
+        "max_value": 52,
+        "min_value": 52,
         "strict_max": false,
         "strict_min": false
       },
@@ -261,8 +267,8 @@
       "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
       "kwargs": {
         "column": "PM10",
-        "max_value": 0.07153965785381027,
-        "min_value": 0.07153965785381027,
+        "max_value": 0.05526036131774708,
+        "min_value": 0.05526036131774708,
         "strict_max": false,
         "strict_min": false
       },
@@ -308,17 +314,13 @@
           22,
           23,
           24,
-          25,
           26,
           27,
-          28,
           29,
-          30,
           31,
-          33,
-          39,
-          41,
-          61
+          37,
+          44,
+          47
         ]
       },
       "meta": {
@@ -339,8 +341,8 @@
       "expectation_type": "expect_column_unique_value_count_to_be_between",
       "kwargs": {
         "column": "PM2.5",
-        "max_value": 34,
-        "min_value": 34,
+        "max_value": 30,
+        "min_value": 30,
         "strict_max": false,
         "strict_min": false
       },
@@ -361,8 +363,8 @@
       "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
       "kwargs": {
         "column": "PM2.5",
-        "max_value": 0.05287713841368585,
-        "min_value": 0.05287713841368585,
+        "max_value": 0.031880977683315624,
+        "min_value": 0.031880977683315624,
         "strict_max": false,
         "strict_min": false
       },
@@ -384,7 +386,7 @@
   "meta": {
     "citations": [
       {
-        "citation_date": "2025-05-14T18:41:45.799011Z",
+        "citation_date": "2025-05-22T06:34:13.089634Z",
         "comment": "Created by effective Rule-Based Profiler of OnboardingDataAssistant with the configuration included.\n"
       }
     ],

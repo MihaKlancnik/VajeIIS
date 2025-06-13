@@ -136,6 +136,38 @@ fluent_datasources:
         type: csv
         batching_regex: .*\.csv
     base_directory: ..\data\preprocessed\air
+  air_quality_v9:
+    type: pandas_filesystem
+    assets:
+      air_quality_data_v9:
+        type: csv
+        batching_regex: .*\.csv
+    base_directory: ..\data\preprocessed\air
+  air_quality_v10:
+    type: pandas_filesystem
+    base_directory: ..\data
+  air_quality_v11:
+    type: pandas_filesystem
+    base_directory: ..\data
+  air_quality_v12:
+    type: pandas_filesystem
+    base_directory: ..\data
+  air_quality_v13:
+    type: pandas_filesystem
+    base_directory: ..\data
+  air_quality_v14:
+    type: pandas_filesystem
+    base_directory: ..\data
+  air_quality_v15:
+    type: pandas_filesystem
+    base_directory: ..\data
+  air_quality_v16:
+    type: pandas_filesystem
+    assets:
+      air_quality_data_v16:
+        type: csv
+        batching_regex: preprocessed\\air\\E410.csv
+    base_directory: ..\data
 notebooks:
 include_rendered_content:
   globally: false
